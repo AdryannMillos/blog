@@ -1,0 +1,26 @@
+<%- include('partials/header'); -%>
+    <h1>Home</h1>
+    <p><%=text1%></p>
+
+
+<%posts.forEach(function(post){%>
+
+<% if(post.title.length > 30){ %>
+  <h1><%=post.title.slice(0,30) + "..."%></h1>
+<% } else { %>
+   <h1><%=post.title%></h1>
+ <%};%>
+
+<% if (post.post.length> 120){ %>
+  <p><%=post.post.slice(0,120)%> <a href="/post/<%=post.title%>" >Read More</a></p>
+<%} else{ %>
+  <p><%=post.post%></p>
+<%};%>
+
+<% });%>
+
+
+
+
+
+<%- include('partials/footer'); -%>
